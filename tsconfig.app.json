@@ -22,7 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
 
-    /* Alias */
+    /* Alias Path */
     "baseUrl": "src",
     "paths": {
       "@app/*": ["app/*"],
