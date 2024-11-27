@@ -1,9 +1,22 @@
+<<<<<<< HEAD
+import { Provider } from "@app/Provider";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import App from "@app/App.tsx";
+=======
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+>>>>>>> parent of d67ad80 (Feat: Setting Alias)
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+<<<<<<< HEAD
+    <Provider />
   </StrictMode>
 );
+=======
+    <App />
+  </StrictMode>,
+)
+>>>>>>> parent of d67ad80 (Feat: Setting Alias)
