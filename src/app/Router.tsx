@@ -1,9 +1,9 @@
-import { Typography } from "@shared/ui/Typography";
+import { HomePage } from "@pages/home/ui";
 import { createBrowserRouter } from "react-router-dom";
 
 export const Router = createBrowserRouter([
   {
     path: "/",
-    element: <Typography size="LargeTitle">asdf</Typography>,
+    element: <HomePage />,
   },
 ]);

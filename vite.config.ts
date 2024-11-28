@@ -4,5 +4,8 @@ import tsconfig from "vite-tsconfig-paths"; // Setting Alias
 
 // https://vite.dev/config/
 export default defineConfig({
+  server: {
+    port: 3000,
+  },
   plugins: [react(), tsconfig()],
 });

@@ -22,6 +22,6 @@ interface TextProps {
 }
 
 const Text = styled.p<TextProps>`
-  font-size: ${({ theme, $size }) => theme.font[$size!]};
-  color: ${({ theme, $color }) => theme.color[$color!]};
+  font-size: ${({ theme, $size }) => theme.light.font[$size!]};
+  color: ${({ theme, $color }) => theme.light.color[$color!]};
 `;

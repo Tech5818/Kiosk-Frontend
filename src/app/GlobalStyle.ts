@@ -11,6 +11,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Moneygraphy";
     }
 
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
     @font-face {
         font-family: "Moneygraphy";
         src: url("./font/Moneygraphy-Rounded.ttf") format("truetype"),
