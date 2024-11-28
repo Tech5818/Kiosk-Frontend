@@ -7,7 +7,7 @@ export const Logo = () => {
     <>
       <Container>
         <LogoIcon />
-        <Typography size="Menu" color="main">
+        <Typography size="Title" color="main">
           키오스크
         </Typography>
       </Container>

@@ -1,6 +1,13 @@
-import { TypographyProps } from "@shared/types/props/TypographyProps";
 import { FC } from "react";
 import styled from "styled-components";
+
+import type { ColorKeys, FontKeys } from "@shared/types/theme";
+
+export interface TypographyProps {
+  children: string | number;
+  size?: FontKeys;
+  color?: ColorKeys;
+}
 
 export const Typography: FC<TypographyProps> = ({
   children,

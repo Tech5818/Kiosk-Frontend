@@ -8,5 +8,5 @@ export const font = {
   LargeMenu: "22px",
   Menu: "20px",
   LargeBody: "18px",
-  Body: "12px",
+  Body: "16px",
 };

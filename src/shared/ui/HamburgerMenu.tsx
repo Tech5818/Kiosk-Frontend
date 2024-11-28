@@ -15,17 +15,19 @@ export const HamburgerMenu = () => {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 12px;
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
+  padding: 0 12px;
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
   background: ${({ theme }) => theme.light.color.sub};
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 4px;
 `;
 
 const Line = styled.div`
   width: 100%;
-  height: 3px;
+  height: 4px;
+  border-radius: 15px;
   background: ${({ theme }) => theme.light.color.white};
 `;

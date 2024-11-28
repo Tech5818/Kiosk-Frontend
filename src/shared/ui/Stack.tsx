@@ -1,5 +1,15 @@
-import { StackProps } from "@shared/types/props/StackProps";
 import styled from "styled-components";
+import { CSSProperties } from "react";
+import { ColorKeys } from "@shared/types/theme";
+
+export interface StackProps {
+  $justifyContent?: CSSProperties["justifyContent"];
+  $alignItems?: CSSProperties["alignItems"];
+  $gap?: CSSProperties["gap"];
+  $flex?: CSSProperties["flex"];
+  $background?: ColorKeys;
+  $padding?: CSSProperties["padding"];
+}
 
 const BaseStack = styled.div<StackProps>`
   display: flex;
@@ -8,6 +18,7 @@ const BaseStack = styled.div<StackProps>`
   ${({ $alignItems }) => ($alignItems ? `align-items: ${$alignItems}` : "")};
   ${({ $gap }) => ($gap ? `gap: ${$gap}` : "")};
   ${({ $flex }) => ($flex ? `flex: ${$flex}` : "")};
+  ${({ $padding }) => ($padding ? `padding: ${$padding}` : "")};
   ${({ $background, theme }) =>
     $background ? `background: ${theme.light.color[$background]}` : ""};
 `;
