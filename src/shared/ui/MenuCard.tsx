@@ -1,26 +1,25 @@
 import styled from "styled-components";
 import { Typography } from "./Typography";
 import { HStack, VStack } from "./Stack";
+import { Menu } from "@shared/types/menu";
 
 interface MenuCardProps {
-  name: string;
-  calorie: number;
-  price: number;
+  menu: Menu;
 }
 
-export const MenuCard = ({ name, calorie, price }: MenuCardProps) => {
+export const MenuCard = ({ menu }: MenuCardProps) => {
   return (
     <>
       <Container>
-        <ImgBox />
+        <ImgBox src={menu.imgPath} />
         <VStack $gap={"20px"} $alignItems="center">
           <Typography size="SubTitle" color="text">
-            {name}
+            {menu.name}
           </Typography>
-          <CalorieBox>{calorie}kcal</CalorieBox>
+          <CalorieBox>{menu.calories}kcal</CalorieBox>
           <HStack $justifyContent="space-between">
             <Typography size="Menu" color="text">
-              {`${price}원`}
+              {`${menu.price}원`}
             </Typography>
           </HStack>
         </VStack>
@@ -40,10 +39,10 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const ImgBox = styled.div`
+const ImgBox = styled.img`
   width: 120px;
   height: 120px;
-  background: ${({ theme }) => theme.light.color.dark_grey};
+  /* background: ${({ theme }) => theme.light.color.dark_grey}; */
 `;
 
 const CalorieBox = styled.div`

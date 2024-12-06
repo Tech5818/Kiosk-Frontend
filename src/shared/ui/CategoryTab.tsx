@@ -1,22 +1,32 @@
 import styled from "styled-components";
 import { Typography } from "./Typography";
+import { useCategoryType } from "@shared/model/CategoryType";
+import { Tab } from "./Tab";
 
 export const CategoryTab = () => {
+  const { type } = useCategoryType((state) => state);
+
   return (
     <>
       <Container>
-        <Tab>
-          <Typography size="LargeMenu" color="sub">
+        <Tab type="all">
+          <Typography size="LargeMenu" color={type === "all" ? "sub" : "text"}>
             전체
           </Typography>
         </Tab>
-        <Tab>
-          <Typography size="LargeMenu" color="text">
+        <Tab type="normal">
+          <Typography
+            size="LargeMenu"
+            color={type === "normal" ? "sub" : "text"}
+          >
             일반
           </Typography>
         </Tab>
-        <Tab>
-          <Typography size="LargeMenu" color="text">
+        <Tab type="special">
+          <Typography
+            size="LargeMenu"
+            color={type === "special" ? "main" : "text"}
+          >
             스페셜
           </Typography>
         </Tab>
@@ -29,5 +39,3 @@ const Container = styled.div`
   display: flex;
   gap: 10px;
 `;
-
-const Tab = styled.div``;

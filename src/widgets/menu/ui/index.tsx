@@ -1,14 +1,27 @@
+import { useCurrentCategory } from "@shared/model/CurrentCategory";
 import { ContentLabel } from "@shared/ui/ContentLabel";
 import { MenuCard } from "@shared/ui/MenuCard";
 import styled from "styled-components";
+import { useMenu } from "../api/useMenu";
 
 export const MenuWidget = () => {
+  const { data } = useMenu();
+  const current = useCurrentCategory((state) => state.current);
+
+  const Menus = data?.filter((menu) => menu.category.id === current?.id);
+
   return (
     <>
       <Container>
-        <ContentLabel title="일반메뉴" subTitle="햄버거" />
+        <ContentLabel
+          title={current?.isSpecial ? "스페셜메뉴" : "일반메뉴"}
+          subTitle={current?.name!!}
+        />
         <MenuList>
-          <MenuCard name="빅맥" calorie={257.2} price={5500} />
+          {Menus &&
+            Menus.map((menu, idx) => {
+              return <MenuCard menu={menu} key={idx} />;
+            })}
         </MenuList>
       </Container>
     </>

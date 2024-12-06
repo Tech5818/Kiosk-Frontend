@@ -1,9 +1,12 @@
-import { CategoryMenu } from "@shared/ui/CategoryMenu";
 import { CategoryTab } from "@shared/ui/CategoryTab";
 import { Typography } from "@shared/ui/Typography";
 import styled from "styled-components";
+import { CategoryCardList } from "@shared/ui/CategoryCardList";
+import { useGetCategoryList } from "../api/useGetCategoryList";
 
 export const CategoryWidget = () => {
+  const { data, isSuccess } = useGetCategoryList();
+
   return (
     <>
       <Container>
@@ -11,12 +14,7 @@ export const CategoryWidget = () => {
           카테고리
         </Typography>
         <CategoryTab />
-        <CategoryCardList>
-          <CategoryMenu text="햄버거" />
-          <CategoryMenu text="햄버거" />
-          <CategoryMenu text="햄버거" />
-          <CategoryMenu text="햄버거" />
-        </CategoryCardList>
+        <CategoryCardList categories={isSuccess ? data : null} />
       </Container>
     </>
   );
@@ -27,10 +25,4 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-`;
-
-const CategoryCardList = styled.div`
-  display: flex;
-  gap: 15px;
-  overflow-x: scroll;
 `;
