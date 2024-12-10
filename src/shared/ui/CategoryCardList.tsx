@@ -1,6 +1,6 @@
 import { useCategoryType } from "@shared/model/CategoryType";
 import { useCurrentCategory } from "@shared/model/CurrentCategory";
-import { Category } from "@shared/types/category";
+import { Category } from "@shared/types/Category";
 import styled from "styled-components";
 import { CategoryMenu } from "./CategoryMenu";
 

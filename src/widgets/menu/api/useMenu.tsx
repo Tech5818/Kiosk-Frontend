@@ -1,4 +1,4 @@
-import { Menu } from "@shared/types/menu";
+import { Menu } from "@shared/types/Menu";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 

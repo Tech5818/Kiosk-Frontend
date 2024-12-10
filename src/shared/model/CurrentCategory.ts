@@ -1,4 +1,4 @@
-import { Category } from "@shared/types/category";
+import { Category } from "@shared/types/Category";
 import { create } from "zustand";
 
 interface CurrentCategory {

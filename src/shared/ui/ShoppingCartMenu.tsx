@@ -1,10 +1,17 @@
 import styled from "styled-components";
 import { ShoppingCartIcon } from "./ShoppingCartIcon";
+import { useSideBar } from "@shared/model/SideBar";
 
 export const ShoppingCartMenu = () => {
+  const { setOpen, open } = useSideBar((state) => state);
+
   return (
     <>
-      <Container>
+      <Container
+        onClick={() => {
+          setOpen(!open);
+        }}
+      >
         <ShoppingCartIcon />
       </Container>
     </>
